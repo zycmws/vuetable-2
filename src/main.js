@@ -272,7 +272,7 @@ let vm = new Vue({
     multiSort: true,
     paginationComponent: 'vuetable-pagination',
     perPage: 10,
-    paginationInfoTemplate: 'Showing record: {from} to {to} from {total} item(s)',
+    // paginationInfoTemplate: 'Showing record: {from} to {to} from {total} item(s)',
     lang: lang,
   },
   watch: {
@@ -436,6 +436,9 @@ let vm = new Vue({
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
+    },
+    onChangePageSize (pageSize) {
+      this.$refs.vuetable.changePageSize(pageSize)
     },
     onInitialized (fields) {
       console.log('onInitialized', fields)
