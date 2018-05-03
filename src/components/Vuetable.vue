@@ -1355,4 +1355,99 @@ export default {
     border-left: none  !important;
     border-right: none  !important;
   }
+  .show-detail-row{
+    cursor:pointer;
+  }
+  .dc-table-pagination{
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .ui.loading.loading.loading.loading.loading.loading.button {
+    position: relative;
+    cursor: default;
+    text-shadow: none !important;
+    color: transparent !important;
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transition: all 0s linear, opacity 0.1s ease;
+    transition: all 0s linear, opacity 0.1s ease;
+  }
+  .ui.loading.segment {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: none !important;
+    color: transparent !important;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+  }
+
+  .ui.loading.segment:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: 0%;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.28571429rem;
+    z-index: 100;
+  }
+
+  .ui.loading.segment:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: -1.5em 0em 0em -1.5em;
+    width: 3em;
+    height: 3em;
+    -webkit-animation: segment-spin 0.6s linear;
+    animation: segment-spin 0.6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 0.2em;
+    -webkit-box-shadow: 0px 0px 0px 1px transparent;
+    box-shadow: 0px 0px 0px 1px transparent;
+    visibility: visible;
+    z-index: 101;
+  }
+  @-webkit-keyframes segment-spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes segment-spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .ui.basic.segment {
+    background: none transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+  }
+
+  .ui.clearing.segment:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 </style>
