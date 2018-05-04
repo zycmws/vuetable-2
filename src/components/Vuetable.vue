@@ -727,7 +727,8 @@ export default {
 
       this.fireEvent('loading')
 
-      this.httpOptions['params'] = this.getAppendParams( this.getAllQueryParams() )
+      Object.assign(this.httpOptions,this.getAppendParams(this.getAllQueryParams()))
+      // this.httpOptions['params'] = this.getAppendParams( this.getAllQueryParams() )
 
       return this.fetch(this.apiUrl, this.httpOptions).then(
           success,
@@ -996,7 +997,7 @@ export default {
       if ( ! this.hasCallback(field)) return
 
       if(typeof(field.callback) == 'function') {
-       return field.callback(this.getObjectValue(item, field.name))
+       return field.callback(this.getObjectValue(item, field.name),item)
       }
 
       let args = field.callback.split('|')
@@ -1006,8 +1007,15 @@ export default {
         let value = this.getObjectValue(item, field.name)
 
         return (args.length > 0)
-          ? this.$parent[func].apply(this.$parent, [value].concat(args))
-          : this.$parent[func].call(this.$parent, value)
+          ? this.$parent[func].apply(this.$parent, [value].concat(args),item)
+          : this.$parent[func].call(this.$parent, value,item)
+      }
+      if (typeof this.$root[func] === 'function') {
+        let value = this.getObjectValue(item, field.name)
+
+        return (args.length > 0)
+          ? this.$root[func].apply(this.$root, [value].concat(args),item)
+          : this.$root[func].call(this.$root, value,item)
       }
 
       return null
