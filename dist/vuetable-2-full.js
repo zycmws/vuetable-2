@@ -5935,7 +5935,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: ['vuetable-pagination-info', _vm.css.infoClass]
   }, [(_vm.tablePagination != null && _vm.tablePagination.total != 0) ? _c('div', [_c('span', {
     domProps: {
-      "textContent": _vm._s('显示第' + _vm.tablePagination.from + '到第' + _vm.tablePagination.to + '条记录，总共' + _vm.tablePagination.total + '条记录')
+      "textContent": _vm._s('显示第 ' + _vm.tablePagination.from + ' 到第 ' + _vm.tablePagination.to + ' 条记录，总共 ' + _vm.tablePagination.total + ' 条记录 每页显示 ')
     }
   }), _vm._v(" "), _c('select', {
     staticClass: "form-control",
@@ -5957,7 +5957,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "textContent": _vm._s(item)
       }
     })
-  }))]) : _c('div', [_vm._v("\n    显示第0到第0条记录，总共0条记录\n  ")])])
+  })), _vm._v(" "), _c('span', [_vm._v(" 条记录")])]) : _c('div', [_vm._v("\n    显示第 0 到第 0 条记录，总共 0 条记录\n  ")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
